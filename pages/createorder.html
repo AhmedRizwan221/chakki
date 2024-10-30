@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,28 +8,60 @@
     <title>Document</title>
     <link rel="stylesheet" href="/assets/css/style.css">
 </head>
+
 <body>
-    
-    <ul>
-        <li><a class="active" href="/chakki/">Home</a></li>
-        <li><a class="active" href="/chakki/pages/createcustomer.html">Create Customer</a></li>
-        <li><a class="active" href="/chakki/pages/createorderforcustomer.html">Create Order (For Customer)</a></li>
-        <li><a class="active" href="/chakki/pages/createorder.html">Create Order</a></li>
-        <li><a id="logoutBtn" href="#">Logout</a></li>
-    </ul>
+    <nav class="navbar-container">
+        <ul class="navbar-section">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" height="35" width="35" class="navbar-svg">
+                <path
+                    d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z" />
+            </svg>
+            <li class="logo">Al-Barka</li>
+            <li><a class="active hidden" href="/chakki/">Home</a></li>
+            <li><a class="active hidden" href="/chakki/pages/createcustomer.html">Create Customer</a></li>
+            <li><a class="active hidden" href="/chakki/pages/createorderforcustomer.html">Create Order (For
+                    Customer)</a></li>
+            <li><a class="active hidden" href="/chakki/pages/createorder.html">Create Order</a></li>
+            <li><a id="logoutBtn" href="#">Logout</a></li>
+        </ul>
+    </nav>
+    <div class="main-order-container">
+        <div class="order-container">
+            <h2>Place Your Order</h2>
+            <form action="" id="">
+                <label for="product">Product:</label>
+                <select name="product" id="product" required>
+                    <option value="">Select</option>
+                    <option value="">Specail Atta</option>
+                    <option value="">Sada Atta</option>
+                    <option value="">Chokar</option>
+                </select>
+                <label for="quantity">Quantity (kg):</label>
+                <input type="number" id="quantity" name="quantity" min="1" required>
+                <label for="price">Price:</label>
+                <input type="number" id="price" name="price" required>
+                <label for="customerName">Name:</label>
+                <input type="text" id="customerName" name="customerName" required>
+                <label for="customerName">Mobile No:</label>
+                <input type="text" id="customerMobNo" name="customerMobileNo" required>
+                <button type="submit">Submit Order</button>
+            </form>
+        </div>
+    </div>
 
     
+
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
         import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-analytics.js";
         const firebaseConfig = {
-          apiKey: "AIzaSyCAmDmDM_rYndxnkhIzHBrP6x0JPtDupzU",
-          authDomain: "chakki-1ad9d.firebaseapp.com",
-          projectId: "chakki-1ad9d",
-          storageBucket: "chakki-1ad9d.appspot.com",
-          messagingSenderId: "400902058518",
-          appId: "1:400902058518:web:ac8d50e36db35a3ed63b37",
-          measurementId: "G-D9548MQV0C"
+            apiKey: "AIzaSyCAmDmDM_rYndxnkhIzHBrP6x0JPtDupzU",
+            authDomain: "chakki-1ad9d.firebaseapp.com",
+            projectId: "chakki-1ad9d",
+            storageBucket: "chakki-1ad9d.appspot.com",
+            messagingSenderId: "400902058518",
+            appId: "1:400902058518:web:ac8d50e36db35a3ed63b37",
+            measurementId: "G-D9548MQV0C"
         };
         const app = initializeApp(firebaseConfig);
         const auth = getAuth(app);
@@ -37,6 +70,9 @@
             onAuthStateChanged: onAuthStateChanged,
             signOut: signOut
         }
-      </script>
+    </script>
 </body>
+
 </html>
+
+
